@@ -20,8 +20,7 @@ public class UserSS  implements UserDetails{
 	
 	public UserSS(){		
 	}
-	
-	
+		
 	
 	public UserSS(Integer id, String email, String senha, Set<Perfil>perfis) {
 		super();

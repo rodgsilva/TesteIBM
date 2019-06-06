@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.com.testeibm.domain.Paciente;
 import br.com.testeibm.repositories.PacienteRepository;
@@ -19,7 +20,8 @@ public class TesteibmApplication implements CommandLineRunner  {
 	private PacienteRepository pacienteRepository;
 	
 	@Autowired
-	private PacienteService pacienteService;
+	private  BCryptPasswordEncoder pe;
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(TesteibmApplication.class, args);
@@ -39,7 +41,7 @@ public class TesteibmApplication implements CommandLineRunner  {
 
 		pacienteRepository.save(list);
 		
-		pacienteService.getPaciente();
+		
 		
 	}
 
