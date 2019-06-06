@@ -31,6 +31,15 @@ public class Paciente implements Serializable {
 		this.idade = idade;
 		this.altura = altura;
 	}
+	
+	
+	public Integer getIdPaciente() {
+		return idPaciente;
+	}
+
+	public void setIdPaciente(Integer idPaciente) {
+		this.idPaciente = idPaciente;
+	}
 
 	public String getNome() {
 		return nome;
