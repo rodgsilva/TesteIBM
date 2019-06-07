@@ -33,6 +33,19 @@ public class Usuario  implements Serializable {
 	 @ElementCollection(fetch=FetchType.EAGER)
 	 @CollectionTable(name="PERFIS")
 	 private Set<Integer> perfis = new HashSet<>();
+	 
+	 public Usuario() {
+		 addPerfil(Perfil.PACIENTE);
+	 }
+	 
+	public Usuario(Integer idUsuario, String nome, String email, String senha) {
+		super();
+		this.idUsuario = idUsuario;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		addPerfil(Perfil.PACIENTE);
+	}
 
 	public Integer getIdUsuario() {
 		return idUsuario;
@@ -98,6 +111,14 @@ public class Usuario  implements Serializable {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", nome=" + nome + ", email=" + email + ", senha=" + senha
+				+ ", perfis=" + perfis + "]";
+	}
+	
+	
 	
 	
 	 

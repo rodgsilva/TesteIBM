@@ -3,17 +3,14 @@ package br.com.testeibm.domain.enums;
 public enum Perfil {
 	
 	ADMIN(1,"ROLE_ADMIN"),
-	USUARIO(2,"ROLE_USUARIO"),
-	CLIENTE(3,"ROLE_CLIENTE"),
-	FOR(4,"ROLE_FORNECEDOR");
-	
+	PACIENTE(2,"ROLE_PACIENTE");
+		
 	private int cod;
 	private String descricao;
 	
 	private Perfil(int cod, String descrica) {
 		this.cod=cod;
-		this.descricao=descrica;		
-		
+		this.descricao=descrica;			
 	}
 	
 	public int getCod() {

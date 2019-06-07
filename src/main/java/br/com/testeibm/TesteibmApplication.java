@@ -1,6 +1,7 @@
 package br.com.testeibm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +11,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.com.testeibm.domain.Paciente;
+import br.com.testeibm.domain.Usuario;
+import br.com.testeibm.domain.enums.Perfil;
 import br.com.testeibm.repositories.PacienteRepository;
-import br.com.testeibm.service.PacienteService;
+import br.com.testeibm.repositories.UsuarioRepository;
 
 @SpringBootApplication
 public class TesteibmApplication implements CommandLineRunner  {
 
 	@Autowired
 	private PacienteRepository pacienteRepository;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
 	private  BCryptPasswordEncoder pe;
@@ -40,6 +46,17 @@ public class TesteibmApplication implements CommandLineRunner  {
 		list.add(new Paciente("Gabi", "Fem", 85.00, 60, 1.65));
 
 		pacienteRepository.save(list);
+		
+		Usuario user = new Usuario(null,"Rodrigo Admin", "rod@gmail.com",pe.encode("123"));
+		user.addPerfil(Perfil.ADMIN);
+		Usuario user2 = new Usuario(null,"Paciente Usuario", "paciente@gmail.com",pe.encode("123"));
+		
+		usuarioRepository.save(Arrays.asList(user,user2));	
+		
+		List<Usuario> user3 = usuarioRepository.findAll();
+		
+		System.out.println(user3.toString());
+		
 		
 		
 		

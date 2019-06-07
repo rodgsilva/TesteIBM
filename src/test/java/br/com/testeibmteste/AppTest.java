@@ -1,4 +1,4 @@
-package br.com.TesteIBM;
+package br.com.testeibmteste;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
