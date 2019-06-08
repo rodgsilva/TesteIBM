@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: TesteIBM
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: rgomsilv
+Built-By: Rodrigo
 Implementation-Vendor-Id: br.com
-Build-Jdk: 1.8.0_192
+Build-Jdk: 1.8.0_202
 Implementation-URL: http://projects.spring.io/spring-boot/TesteIBM/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
