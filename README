@@ -1,33 +1,52 @@
-**Projeto de cadastro de Paciente
+##Projeto de cadastro de Paciente
 
-Projeto foram feitos usando banco de dados H2
+* Cadastro básico de paciente e cadastro de usuário.
 
-tem cadastro
-um admin e um paciente
-Nome: Rodrigo Admin" Email: "rod@gmail.com" Senha:123
+##Tecnologia 
 
-Teste Via Postman
-POST: http://localhost:8080/login
+* Projeto foram feitos usando banco de dados H2
+* Spring JPA
+* Spring Boot
+* Spring Security 
+* JWT
+* API REST com JSON
+* MAVE
 
-{
-	"email": "rod@gmail.com",
-	"senha": "123"
-}
+## Configuração
 
-Recuperar headers
-Authorization → Bearer **
+* IDE Eclipse 
+* Projeto está em MAVE com isso as dependencia serão abaixadas
+* O projeto poderá ser executado pelo próprio eclipse e ser Testado com POSTMAN
 
-Com a Chave recueprada pode ser usado para outras chamadas.
+## Massa para Teste
 
-GET:/
-GET:/id
-GET:/pesquisa
-	Tem alguns problema de logica usando função para resolver os problemas. 
-POST:/
-{
-        "nome": "Rodrigo Teste",
-        "sexo": "Masc",
-        "peso": 100,
-        "idade": 35,
-        "altura": 1.75
-    }
+* O cadastro será feito em tempo de execução disponível na Class. MAN - TesteibmApplication.
+* Foram cadastrados dois usuários um ADM e um paciente. Um admin e um paciente.
+
+* Nome: Rodrigo Admin" Email: "rod@gmail.com" Senha:123
+ 
+* Teste Via Postman para recuperar o token
+* POST: http://localhost:8080/login
+
+	{
+		"email": "rod@gmail.com",
+		"senha": "123"
+	}
+
+* Recuperar no headers de respota o token
+* Authorization → Bearer **
+
+* Com o Token recueprado pode ser usado para as chamadas.
+
+	GET:/
+	GET:/id
+	GET:/pesquisa
+		Tem alguns problemas de logica usando função para resolver os problemas. 
+	POST:/
+		{
+	        "nome": "Rodrigo Teste",
+	        "sexo": "Masc",
+	        "peso": 100,
+	        "idade": 35,
+	        "altura": 1.75
+	    }
