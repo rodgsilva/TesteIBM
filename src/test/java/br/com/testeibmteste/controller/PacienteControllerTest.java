@@ -39,7 +39,7 @@ import br.com.testeibm.service.PacienteService;
 @WebMvcTest(PacienteController.class)
 public class PacienteControllerTest {
 	
-	private static final String ROTA = "localhost:8080/paciente/";
+	private static final String ROTA = "/paciente/";
 	private static final String BODY ="{email:rod@gmail.com,senha:123}";
 	 
 	@InjectMocks
@@ -66,14 +66,14 @@ public class PacienteControllerTest {
 	@Test
 	public void deveRealizarGetTestPaciente() throws Exception{
 		when(service.findAll()).thenReturn(getListaMock());
-		getToken();
+	//	getToken();
 	
 		result = this.mockMvc.perform(get(ROTA)
 				.header(Authorization, token)).andReturn();
 	
 		assertNotNull(result);
-		assertEquals(HttpStatus.OK,result.getResponse());
-		assertTrue(result.getResponse().getContentAsString().contains("\"nome\":\"Teste\""));
+		assertEquals(200,result.getResponse().getStatus());
+		assertTrue(result.getResponse().getContentAsString().contains("\"nome\":\"Nome Teste\""));
 	}
 	
 	private List<Paciente> getListaMock() {
